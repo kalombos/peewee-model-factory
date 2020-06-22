@@ -19,6 +19,7 @@ setup(
     description="A library to create peewee model instances for testing.",
     long_description=long_description,
     long_description_content_type='text/markdown',
+    url="https://github.com/kalombos/peewee-model-factory",
     keywords="python testing fixture generator peewee model factory peewee fixtures",
     license="BSD",
 
