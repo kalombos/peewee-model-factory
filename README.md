@@ -61,7 +61,7 @@ and [peewee-fake_fixtures](https://github.com/niedbalski/peewee-fake_fixtures) p
 
 #### Features
 * Recursevely creating models for foreign fields
-* Option for filling nullable values
+* An option for filling nullable values
 * Easy customization if you need to extend or change generation for types of peewee fields
 
 #### Possible inconvenience
