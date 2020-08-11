@@ -78,7 +78,7 @@ def model_factory(
         field_value = kwargs.get(field_name, _missing)
         if field_value is not _missing:
             pass
-        elif field.primary_key or field.default:
+        elif field.primary_key or field.default is not None:
             continue
         elif field.null and not fill_nullable_values:
             field_value = None

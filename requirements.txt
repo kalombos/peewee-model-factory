@@ -1,0 +1,5 @@
+peewee
+pytest
+pytz
+psycopg2-binary
+bumpversion
