@@ -1,0 +1,11 @@
+version: '3.3'
+
+services:
+  postgres:
+    image: postgres:12.1
+    ports:
+      - '5432:5432'
+    environment:
+      - POSTGRES_PASSWORD=pw-model-factory
+      - POSTGRES_USER=pw-model-factory
+      - POSTGRES_DB=pw-model-factory
