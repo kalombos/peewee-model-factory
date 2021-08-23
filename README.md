@@ -65,7 +65,6 @@ and [peewee-fake_fixtures](https://github.com/niedbalski/peewee-fake_fixtures) p
 * Easy customization if you need to extend or change generation for types of peewee fields
 
 #### Possible inconvenience
-* The project has no tests.
 * Not all field types of peeweee has factory function in the project. You have to write custom one if you want to use them
 
  
