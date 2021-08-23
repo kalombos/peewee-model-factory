@@ -17,5 +17,6 @@ def test_default_field_is_not_generated():
 
 
 def test_error_for_unknown_field():
+
     with pytest.raises(FieldNotFound):
         model_factory(Book, unknown_field="value")
