@@ -70,7 +70,7 @@ def model_factory(
 
     nm = model()
     for field_name in kwargs:
-        if field_name not in model._meta.fields:
+        if field_name.replace('_id', '') not in model._meta.fields:
             raise FieldNotFound(f'{model.__name__} has no "{field_name}" field')
     for field in model._meta.fields.values():
         field_name = field.name
@@ -83,11 +83,15 @@ def model_factory(
         elif field.null and not fill_nullable_values:
             field_value = None
         elif field_type is pw.ForeignKeyField:
-            field_value = model_factory(
-                field.rel_model,
-                custom_field_type_map=_field_type_map,
-                fill_nullable_values=fill_nullable_values
-            )
+            fk_id_field_name = f"{field_name}_id"
+            if fk_id_field_name in kwargs:
+                field_value = kwargs[fk_id_field_name]
+            else:
+                field_value = model_factory(
+                    field.rel_model,
+                    custom_field_type_map=_field_type_map,
+                    fill_nullable_values=fill_nullable_values
+                )
         else:
             field_factory = _field_type_map[field_type]
             field_value = field_factory(field)
