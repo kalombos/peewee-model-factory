@@ -70,7 +70,7 @@ def model_factory(
 
     nm = model()
     for field_name in kwargs:
-        if field_name.replace('_id', '') not in model._meta.fields:
+        if field_name.removesuffix('_id') not in model._meta.fields:
             raise FieldNotFound(f'{model.__name__} has no "{field_name}" field')
     for field in model._meta.fields.values():
         field_name = field.name
