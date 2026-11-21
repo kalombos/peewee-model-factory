@@ -19,3 +19,9 @@ def test_default_field_is_not_generated():
 def test_error_for_unknown_field():
     with pytest.raises(FieldNotFound):
         model_factory(Book, unknown_field="value")
+
+
+def test_foreign_field_by_id():
+    author = model_factory(Author)
+    book = model_factory(Book, author_id=author.get_id())
+    assert book.author.get_id() == author.get_id()
