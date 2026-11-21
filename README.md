@@ -1,6 +1,12 @@
 peewee_model_factory
 ====================
 
+> **⚠️ Deprecated**
+>
+> This project is no longer actively maintained.
+>
+> As an alternative, please use [`miggy.ext.peewee_factory`](https://miggy.readthedocs.io/en/latest/ext.html#peeweefactory), an extension included in [Miggy](https://github.com/kalombos/miggy).
+
 
 #### No time? Ready to use?
 
